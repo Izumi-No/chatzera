@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/swcrc",
+  "sourceMaps": "inline",
+  "module": { "type": "commonjs", "strictMode": true, "noInterop": false },
+  "jsc": {
+    "externalHelpers": false,
+    "target": "es2022",
+    "parser": {
+      "syntax": "typescript",
+      "decorators": true,
+      "dynamicImport": true
+    },
+    "keepClassNames": true
+  }
+}
