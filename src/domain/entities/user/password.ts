@@ -1,9 +1,11 @@
 import { Either, left, right } from "@/utils/either";
 
 import { InvalidPasswordLengthError } from "./errors/invalidPasswordLengthError";
-import { container } from "tsyringe";
+import { container, registry } from "tsyringe";
 import { Hasher } from "@/utils/infrastructure/crypto/hasher";
+import { Argon2Hasher } from "@/infrastructure/crypto/argon2/argon2Hasher";
 
+@registry([{ token: "Hasher", useClass: Argon2Hasher }])
 export class Password {
   private constructor(
     private password: string,

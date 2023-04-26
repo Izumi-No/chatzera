@@ -1,6 +1,4 @@
-import { container } from "tsyringe";
+import { registry } from "tsyringe";
 import { Argon2Hasher } from "./infrastructure/crypto/argon2/argon2Hasher";
-
-container.register("Hasher", {
-  useClass: Argon2Hasher,
-});
+import { HyperExpressServer } from "./infrastructure/http/hyper-express/server";
+import { DrizzleUserRepository } from "./infrastructure/persistence/drizzleOrm/repositories/drizzleUserRepository";

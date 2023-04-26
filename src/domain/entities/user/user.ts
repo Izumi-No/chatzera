@@ -32,6 +32,14 @@ export class User extends Entity<User.Props> {
       )
     );
   }
+
+  get nickname(): string {
+    return this.props.nickname.value;
+  }
+
+  get password(): Password {
+    return this.props.password;
+  }
 }
 
 namespace User {

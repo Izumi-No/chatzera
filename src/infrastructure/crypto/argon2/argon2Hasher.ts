@@ -1,5 +1,6 @@
 import { Hasher } from "@/utils/infrastructure/crypto/hasher";
 import { hash, verify } from "argon2";
+import { registry } from "tsyringe";
 
 export class Argon2Hasher extends Hasher {
   constructor() {
