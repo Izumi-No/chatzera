@@ -1,8 +1,8 @@
 {
   "version": "5",
   "dialect": "pg",
-  "id": "4e5cf92e-1299-416d-b31f-9e3195a88978",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "8f85f45b-0bfc-44bf-9aed-6d3060f3ecf6",
+  "prevId": "4e5cf92e-1299-416d-b31f-9e3195a88978",
   "tables": {
     "users": {
       "name": "users",
@@ -11,20 +11,20 @@
         "id": {
           "name": "id",
           "type": "uuid",
-          "primaryKey": false,
-          "notNull": false
+          "primaryKey": true,
+          "notNull": true
         },
         "nickname": {
           "name": "nickname",
           "type": "text",
           "primaryKey": false,
-          "notNull": false
+          "notNull": true
         },
         "password": {
           "name": "password",
           "type": "text",
           "primaryKey": false,
-          "notNull": false
+          "notNull": true
         }
       },
       "indexes": {},
