@@ -1,4 +1,4 @@
-import { DomainError } from "../../../../utils/domain/domainError";
+import { DomainError } from "../../../../shared/domain/domainError";
 
 export class NicknameLengthError extends Error implements DomainError {
   constructor() {

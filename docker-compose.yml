@@ -1,11 +1,19 @@
 version: '3.8'
 
 services:
-  db:
+  cache-redis:
+    image: redis:6-alpine
+    restart: unless-stopped
+    volumes:
+      - cache-redis-data:/data
+    ports:
+      - 6379:6379
+  
+  persistence-postgres:
     image: postgres:14.1-alpine
     restart: unless-stopped
     volumes:
-      - postgres-data:/var/lib/postgresql/data
+      - persistence-postgres-data:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: postgres
@@ -17,4 +25,5 @@ services:
     # (Adding the "ports" property to this file will not forward from a Codespace.)
 
 volumes:
-  postgres-data:
+  persistence-postgres-data:
+  cache-redis-data:

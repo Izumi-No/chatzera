@@ -1,4 +1,4 @@
-import { left, right } from "@/utils/either";
+import { left, right } from "@/shared/either";
 import { NicknameLengthError } from "./errors/nicknameLengthError";
 
 export class Nickname {
@@ -11,6 +11,7 @@ export class Nickname {
     if (nickname.length < 30 && nickname.length > 5) {
       return right(new Nickname(nickname));
     }
+
     return left(new NicknameLengthError());
   }
 }

@@ -1,0 +1,5 @@
+{
+  "out": "./src/infrastructure/persistence/drizzleOrm/migrations",
+  "schema": "./src/infrastructure/persistence/drizzleOrm/schema",
+  "breakpoints": false
+}

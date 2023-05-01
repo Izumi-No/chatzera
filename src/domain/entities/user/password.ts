@@ -1,8 +1,8 @@
-import { Either, left, right } from "@/utils/either";
+import { Either, left, right } from "@/shared/either";
 
 import { InvalidPasswordLengthError } from "./errors/invalidPasswordLengthError";
 import { container } from "tsyringe";
-import { Hasher } from "@/utils/infrastructure/crypto/hasher";
+import { Hasher } from "@/shared/infrastructure/crypto/hasher";
 
 export class Password {
   private constructor(
@@ -53,6 +53,7 @@ export class Password {
     }
 
     const hasher: Hasher = container.resolve("Hasher");
+
     return right(new Password(password, hashed, hasher));
   }
 }

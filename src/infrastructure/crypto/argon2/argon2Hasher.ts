@@ -1,11 +1,7 @@
-import { Hasher } from "@/utils/infrastructure/crypto/hasher";
+import { Hasher } from "@/shared/infrastructure/crypto/hasher";
 import { hash, verify } from "argon2";
 
-export class Argon2Hasher extends Hasher {
-  constructor() {
-    super();
-  }
-
+export class Argon2Hasher implements Hasher {
   async hash(value: string): Promise<string> {
     return await hash(value);
   }
